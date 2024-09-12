@@ -1,1 +1,128 @@
-<h2>Experience</h2>
+---
+const technologies = [
+  "PHP",
+  "Javascript",
+  "MySQL",
+  "HTML",
+  "css",
+  "sass",
+  "Tailwind",
+  "Figma",
+  "Node",
+  "MongoDB",
+  "React",
+  "Vue",
+  "Angular",
+  "Astro",
+];
+
+const getTechColor = (tech: string): string => {
+  const colors: { [key: string]: string } = {
+    PHP: "border-2 border-indigo-300 text-indigo-300 roboto-regular",
+    Javascript: "border-2 border-yellow-500 text-yellow-500 roboto-regular",
+    MySQL: "border-2 border-blue-600 text-blue-600 roboto-regular",
+    HTML: "border-2 border-amber-500 text-amber-500 roboto-regular",
+    css: "border-2 border-blue-400 text-blue-400 roboto-regular",
+    sass: "border-2 border-pink-400 text-pink-400 roboto-regular",
+    Tailwind: "border-2 border-sky-600 text-sky-600 roboto-regular",
+    Figma: "border-2 border-rose-600 text-rose-600 roboto-regular",
+    Node: "border-2 border-lime-600 text-lime-600 roboto-regular",
+    MongoDB: "border-2 border-green-400 text-green-400 roboto-regular",
+    React: "border-2 border-cyan-500 text-cyan-500 roboto-regular",
+    Vue: "border-2 border-emerald-500 text-emerald-500 roboto-regular",
+    Angular: "border-2 border-red-600 text-red-600 roboto-regular",
+    Astro: "border-2 border-orange-500 text-orange-500 roboto-regular",
+  };
+  return (
+    colors[tech] || "border-2 border-zinc-600 text-zinc-600 roboto-regular"
+  );
+};
+---
+
+<section class="md:w-1/2 m-auto my-20 p-8">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-10 text-base text-zinc-500 mt-8"
+  >
+    <div class="border border-zinc-600 p-10 rounded-2xl">
+      <h3 class="text-lg text-indigo-800">Cerdá Group</h3>
+      <h2 class="text-3xl text-black">Frontend & Ux/Ui Designer</h2>
+      <h5 class="text-sm roboto-regular-italic">Enero 2024 - Hoy</h5>
+      <p class="my-4">
+        Experiencia laboral. Durante este primer año como desarrollador formo
+        parte del equipo de Digital Business y he trabajado mayormente en el
+        desarrollo y mejora de la intranet.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class={`${getTechColor("PHP")} px-2 py-1 text-xs`}> PHP </span>
+
+        <span class={`${getTechColor("MySQL")} px-2 py-1 text-xs`}>
+          MySQL
+        </span>
+
+        <span class={`${getTechColor("Javascript")} px-2 py-1 text-xs`}>
+          Javascript
+        </span>
+
+        <span class={`${getTechColor("HTML")} px-2 py-1 text-xs`}> HTML </span>
+
+        <span class={`${getTechColor("css")} px-2 py-1 text-xs`}> css </span>
+
+        <span class={`${getTechColor("sass")} px-2 py-1 text-xs`}> sass </span>
+
+        <span class={`${getTechColor("Tailwind")} px-2 py-1 text-xs`}>
+          Tailwind
+        </span>
+
+        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+          Figma
+        </span>
+      </div>
+    </div>
+
+    <div class="border border-zinc-600 p-10 rounded-2xl">
+      <h3 class="text-lg text-indigo-800">Freelance</h3>
+      <h2 class="text-3xl text-black">Desarrollador Full Stack</h2>
+      <h5 class="text-sm roboto-regular-italic">Mayo 2023 - Enero 2024</h5>
+      <p class="my-4">
+        Experiencia no laboral. Desarrollo de proyectos a pequeña escala para
+        mejorar la lógica de programación y poder seguir aprendiendo. En esta
+        etapa he ido trabajando con distintas tecnologías.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class={`${getTechColor("React")} px-2 py-1 text-xs`}>
+          React
+        </span>
+
+        <span class={`${getTechColor("Javascript")} px-2 py-1 text-xs`}>
+          Javascript
+        </span>
+
+        <span class={`${getTechColor("HTML")} px-2 py-1 text-xs`}> HTML </span>
+
+        <span class={`${getTechColor("css")} px-2 py-1 text-xs`}> css </span>
+
+        <span class={`${getTechColor("Tailwind")} px-2 py-1 text-xs`}>
+          Tailwind
+        </span>
+
+        <span class={`${getTechColor("Node")} px-2 py-1 text-xs`}> Node </span>
+
+        <span class={`${getTechColor("MongoDB")} px-2 py-1 text-xs`}>
+          MongoDB
+        </span>
+
+        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+          Figma
+        </span>
+
+        <span class={`${getTechColor("Express")} px-2 py-1 text-xs`}>
+          Express
+        </span>
+
+        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+          Astro
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

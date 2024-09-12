@@ -1,1 +1,136 @@
-<h2>Projects</h2>
+---
+const projects = [
+  {
+    id: "1",
+    title: "Tesla Landing Page",
+    description:
+      "Recreación de la página web de Tesla a nivel funcional y de diseño. En este caso fue un ejercicio práctico del curso de Midudev.",
+    image: "/img/project1_thumbnail.png",
+    technologies: ["Astro", "Tailwind", "Javascript"],
+    demoLink: "https://demo1.example.com",
+    githubLink: "https://github.com/davidreguart/landing-tesla",
+  },
+  {
+    id: "2",
+    title: "Genius Home",
+    description:
+      "Web app para la gestión del hogar. Lista de la compra, asignación de tareas por miembros de la familia, chat en vivo y más.",
+    image: "/img/project2_thumbnail.png",
+    technologies: [
+      "React",
+      "Express",
+      "Node",
+      "MongoDB",
+      "Javascript",
+      "Tailwind",
+    ],
+    demoLink: "https://genius-home.fly.dev/login",
+    githubLink: "https://github.com/davidypaloma/GeniusHome",
+  },
+];
+
+const getTechColor = (tech: string): string => {
+  const colors: { [key: string]: string } = {
+    Astro: "bg-orange-400",
+    Javascript: "bg-yellow-400 text-zinc-800",
+    React: "bg-cyan-500",
+    Express: "bg-stone-500",
+    Node: "bg-lime-600",
+    MongoDB: "bg-green-400",
+    Tailwind: "bg-sky-600",
+  };
+  return colors[tech] || "bg-gray-400 text-zinc-800";
+};
+---
+
+<div class="md:w-1/2 mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      projects.map((project) => (
+        <div class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 transform-gpu group project-card">
+          <img
+            src={project.image}
+            alt={project.title}
+            class="w-full h-full object-cover"
+          />
+
+          <div class="absolute inset-0 bg-black rounded-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+
+          <div class="absolute inset-0 text-white text-wrap p-4 rounded-lg backdrop-blur-sm transition-transform duration-300 transform translate-y-full group-hover:translate-y-0 group-hover:opacity-100 opacity-0 flex flex-col justify-between">
+            <div>
+              <h3 class="text-2xl roboto-bold mb-2">{project.title}</h3>
+              <p class="text-sm mb-3">{project.description}</p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                {project.technologies.map((tech) => (
+                  <span class={`${getTechColor(tech)} px-2 py-1 text-xs`}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a
+                href={project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+              >
+                Demo
+              </a>
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white text-purple-600 hover:bg-purple-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script type="module">
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const { left, top, width, height } = card.getBoundingClientRect();
+      const mouseX = e.clientX - left;
+      const mouseY = e.clientY - top;
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      const maxRotation = 20;
+      const rotateX = -((mouseY - centerY) / centerY) * maxRotation;
+      const rotateY = -((mouseX - centerX) / centerX) * maxRotation;
+
+      const shadowX = rotateY * -1;
+      const shadowY = rotateX * -1;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.boxShadow = `${shadowX * 1.1}px ${shadowY * 1.1}px 14px rgba(0, 0, 0, 0.3)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0deg) rotateY(0deg)";
+      card.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
+    });
+  });
+</script>
+
+<style>
+  .project-card {
+    perspective: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition:
+      transform 0.1s,
+      box-shadow 0.3s;
+    transform-style: preserve-3d;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  }
+</style>
