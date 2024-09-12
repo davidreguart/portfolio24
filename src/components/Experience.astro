@@ -18,28 +18,37 @@ const technologies = [
 
 const getTechColor = (tech: string): string => {
   const colors: { [key: string]: string } = {
-    PHP: "border-2 border-indigo-300 text-indigo-300 roboto-regular",
-    Javascript: "border-2 border-yellow-500 text-yellow-500 roboto-regular",
-    MySQL: "border-2 border-blue-600 text-blue-600 roboto-regular",
-    HTML: "border-2 border-amber-500 text-amber-500 roboto-regular",
-    css: "border-2 border-blue-400 text-blue-400 roboto-regular",
-    sass: "border-2 border-pink-400 text-pink-400 roboto-regular",
-    Tailwind: "border-2 border-sky-600 text-sky-600 roboto-regular",
-    Figma: "border-2 border-rose-600 text-rose-600 roboto-regular",
-    Node: "border-2 border-lime-600 text-lime-600 roboto-regular",
-    MongoDB: "border-2 border-green-400 text-green-400 roboto-regular",
-    React: "border-2 border-cyan-500 text-cyan-500 roboto-regular",
-    Vue: "border-2 border-emerald-500 text-emerald-500 roboto-regular",
-    Angular: "border-2 border-red-600 text-red-600 roboto-regular",
-    Astro: "border-2 border-orange-500 text-orange-500 roboto-regular",
+    PHP: "border-2 border-indigo-300 text-indigo-300 roboto-regular hover:bg-indigo-300 hover:text-white",
+    Javascript:
+      "border-2 border-yellow-500 text-yellow-500 roboto-regular hover:bg-yellow-500 hover:text-white",
+    MySQL:
+      "border-2 border-blue-600 text-blue-600 roboto-regular hover:bg-blue-600 hover:text-white",
+    HTML: "border-2 border-amber-500 text-amber-500 roboto-regular hover:bg-amber-500 hover:text-white",
+    css: "border-2 border-blue-400 text-blue-400 roboto-regular hover:bg-blue-400 hover:text-white",
+    sass: "border-2 border-pink-400 text-pink-400 roboto-regular hover:bg-pink-400 hover:text-white",
+    Tailwind:
+      "border-2 border-sky-600 text-sky-600 roboto-regular hover:bg-sky-600 hover:text-white",
+    Figma:
+      "border-2 border-rose-600 text-rose-600 roboto-regular hover:bg-rose-600 hover:text-white",
+    Node: "border-2 border-lime-600 text-lime-600 roboto-regular hover:bg-lime-600 hover:text-white",
+    MongoDB:
+      "border-2 border-green-400 text-green-400 roboto-regular hover:bg-green-400 hover:text-white",
+    React:
+      "border-2 border-cyan-500 text-cyan-500 roboto-regular hover:bg-cyan-500 hover:text-white",
+    Vue: "border-2 border-emerald-500 text-emerald-500 roboto-regular hover:bg-emerald-500 hover:text-white",
+    Angular:
+      "border-2 border-red-600 text-red-600 roboto-regular hover:bg-red-600 hover:text-white",
+    Astro:
+      "border-2 border-orange-500 text-orange-500 roboto-regular hover:bg-orange-500 hover:text-white",
   };
   return (
-    colors[tech] || "border-2 border-zinc-600 text-zinc-600 roboto-regular"
+    colors[tech] ||
+    "border-2 border-zinc-600 text-zinc-600 roboto-regular hover:bg-zinc-600 hover:text-white"
   );
 };
 ---
 
-<section class="md:w-1/2 m-auto my-20 p-8">
+<section id="experience" class="md:w-3/4 m-auto my-20 p-8">
   <div
     class="grid grid-cols-1 md:grid-cols-2 gap-10 text-base text-zinc-500 mt-8"
   >
@@ -53,27 +62,47 @@ const getTechColor = (tech: string): string => {
         desarrollo y mejora de la intranet.
       </p>
       <div class="flex flex-wrap gap-2 mb-3">
-        <span class={`${getTechColor("PHP")} px-2 py-1 text-xs`}> PHP </span>
+        <span class={`${getTechColor("PHP")} px-2 py-1 text-xs cursor-default`}>
+          PHP
+        </span>
 
-        <span class={`${getTechColor("MySQL")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("MySQL")} px-2 py-1 text-xs cursor-default`}
+        >
           MySQL
         </span>
 
-        <span class={`${getTechColor("Javascript")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Javascript")} px-2 py-1 text-xs cursor-default`}
+        >
           Javascript
         </span>
 
-        <span class={`${getTechColor("HTML")} px-2 py-1 text-xs`}> HTML </span>
+        <span
+          class={`${getTechColor("HTML")} px-2 py-1 text-xs cursor-default`}
+        >
+          HTML
+        </span>
 
-        <span class={`${getTechColor("css")} px-2 py-1 text-xs`}> css </span>
+        <span class={`${getTechColor("css")} px-2 py-1 text-xs cursor-default`}>
+          css
+        </span>
 
-        <span class={`${getTechColor("sass")} px-2 py-1 text-xs`}> sass </span>
+        <span
+          class={`${getTechColor("sass")} px-2 py-1 text-xs cursor-default`}
+        >
+          sass
+        </span>
 
-        <span class={`${getTechColor("Tailwind")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Tailwind")} px-2 py-1 text-xs cursor-default`}
+        >
           Tailwind
         </span>
 
-        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Figma")} px-2 py-1 text-xs cursor-default`}
+        >
           Figma
         </span>
       </div>
@@ -89,37 +118,61 @@ const getTechColor = (tech: string): string => {
         etapa he ido trabajando con distintas tecnologías.
       </p>
       <div class="flex flex-wrap gap-2 mb-3">
-        <span class={`${getTechColor("React")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("React")} px-2 py-1 text-xs cursor-default`}
+        >
           React
         </span>
 
-        <span class={`${getTechColor("Javascript")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Javascript")} px-2 py-1 text-xs cursor-default`}
+        >
           Javascript
         </span>
 
-        <span class={`${getTechColor("HTML")} px-2 py-1 text-xs`}> HTML </span>
+        <span
+          class={`${getTechColor("HTML")} px-2 py-1 text-xs cursor-default`}
+        >
+          HTML
+        </span>
 
-        <span class={`${getTechColor("css")} px-2 py-1 text-xs`}> css </span>
+        <span class={`${getTechColor("css")} px-2 py-1 text-xs cursor-default`}>
+          css
+        </span>
 
-        <span class={`${getTechColor("Tailwind")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Tailwind")} px-2 py-1 text-xs cursor-default`}
+        >
           Tailwind
         </span>
 
-        <span class={`${getTechColor("Node")} px-2 py-1 text-xs`}> Node </span>
+        <span
+          class={`${getTechColor("Node")} px-2 py-1 text-xs cursor-default`}
+        >
+          Node
+        </span>
 
-        <span class={`${getTechColor("MongoDB")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("MongoDB")} px-2 py-1 text-xs cursor-default`}
+        >
           MongoDB
         </span>
 
-        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Figma")} px-2 py-1 text-xs cursor-default`}
+        >
           Figma
         </span>
 
-        <span class={`${getTechColor("Express")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Express")} px-2 py-1 text-xs cursor-default`}
+        >
           Express
         </span>
 
-        <span class={`${getTechColor("Figma")} px-2 py-1 text-xs`}>
+        <span
+          class={`${getTechColor("Figma")} px-2 py-1 text-xs cursor-default`}
+        >
           Astro
         </span>
       </div>

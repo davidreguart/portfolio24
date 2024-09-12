@@ -7,7 +7,7 @@ const projects = [
       "Recreación de la página web de Tesla a nivel funcional y de diseño. En este caso fue un ejercicio práctico del curso de Midudev.",
     image: "/img/project1_thumbnail.png",
     technologies: ["Astro", "Tailwind", "Javascript"],
-    demoLink: "https://demo1.example.com",
+    demoLink: "https://clone-landing-tesla.netlify.app/",
     githubLink: "https://github.com/davidreguart/landing-tesla",
   },
   {
@@ -43,8 +43,8 @@ const getTechColor = (tech: string): string => {
 };
 ---
 
-<div class="md:w-1/2 mx-auto px-4 py-16">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div id="projects" class="md:w-3/4 mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
     {
       projects.map((project) => (
         <div class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 transform-gpu group project-card">
@@ -59,7 +59,9 @@ const getTechColor = (tech: string): string => {
           <div class="absolute inset-0 text-white text-wrap p-4 rounded-lg backdrop-blur-sm transition-transform duration-300 transform translate-y-full group-hover:translate-y-0 group-hover:opacity-100 opacity-0 flex flex-col justify-between">
             <div>
               <h3 class="text-2xl roboto-bold mb-2">{project.title}</h3>
-              <p class="text-sm mb-3">{project.description}</p>
+              <p class="text-sm mb-3 pr-20 hidden md:block">
+                {project.description}
+              </p>
               <div class="flex flex-wrap gap-2 mb-3">
                 {project.technologies.map((tech) => (
                   <span class={`${getTechColor(tech)} px-2 py-1 text-xs`}>
@@ -68,23 +70,25 @@ const getTechColor = (tech: string): string => {
                 ))}
               </div>
             </div>
-            <div class="flex gap-3 mt-4">
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
-              >
-                Demo
-              </a>
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-white text-purple-600 hover:bg-purple-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
-              >
-                GitHub
-              </a>
+            <div>
+              <div class="flex gap-3 mt-1 md:mt-4">
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+                >
+                  Demo
+                </a>
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white text-purple-600 hover:bg-purple-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
         </div>
