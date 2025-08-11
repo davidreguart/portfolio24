@@ -1,6 +1,26 @@
 ---
 const projects = [
   {
+    id: "3",
+    title: "Web Personalizada Bar - Restaurante Camarena",
+    description:
+      "Web final profesional a petición de un cliente. Trabajada tanto a nivel visual como técnico. Con animaciones fluidas y desarrollada con un enfoque Mobile First.",
+    image: "/img/WebCamarena.jpg",
+    technologies: ["HTML", "Astro", "Javascript", "Tailwind"],
+    demoLink: "https://barcamarena.com/",
+    githubLink: null,
+  },
+  {
+    id: "4",
+    title: "WebApp Catal 'O'Matic",
+    description:
+      "Software para la creación rápida y digital de catálogos personalizados. Conectado a una DB para el registro de todos los productos de la empresa.",
+    image: "/img/CatalOmaticProject.jpg",
+    technologies: ["HTML", "CSS", "React", "Typescript", "Tailwind", "Supabase", "Gemini"],
+    demoLink: "restricted",
+    githubLink: null,
+  },
+  {
     id: "1",
     title: "Tesla Landing Page",
     description:
@@ -38,13 +58,18 @@ const getTechColor = (tech: string): string => {
     Node: "bg-lime-600",
     MongoDB: "bg-green-400",
     Tailwind: "bg-sky-600",
+    HTML: "bg-amber-500",
+    CSS: "bg-blue-400",
+    Typescript: "bg-blue-600",
+    Supabase: "bg-emerald-600",
+    Gemini: "bg-purple-500",
   };
   return colors[tech] || "bg-gray-400 text-zinc-800";
 };
 ---
 
-<div id="projects" class="md:w-3/4 mx-auto px-4 py-16">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div id="projects" class="md:w-5/6 mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
     {
       projects.map((project) => (
         <div class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 transform-gpu group project-card">
@@ -72,22 +97,35 @@ const getTechColor = (tech: string): string => {
             </div>
             <div>
               <div class="flex gap-3 mt-1 md:mt-4">
-                <a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
-                >
-                  Demo
-                </a>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="bg-white text-purple-600 hover:bg-purple-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
-                >
-                  GitHub
-                </a>
+                {project.demoLink && (
+                  project.demoLink === "restricted" ? (
+                    <button
+                      onclick="openModal()"
+                      class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+                    >
+                      Demo
+                    </button>
+                  ) : (
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="bg-white text-sky-600 hover:bg-sky-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+                    >
+                      Demo
+                    </a>
+                  )
+                )}
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-white text-purple-600 hover:bg-purple-600 hover:text-white roboto-bold py-2 px-3 rounded-full text-sm flex items-center transition-colors duration-300"
+                  >
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -97,7 +135,40 @@ const getTechColor = (tech: string): string => {
   </div>
 </div>
 
+<!-- Modal -->
+<div id="accessModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg p-6 max-w-sm mx-4 text-center">
+    <h3 class="text-lg font-bold text-gray-800 mb-4">Acceso Restringido</h3>
+    <p class="text-gray-600 mb-6">Acceso no permitido a través del portfolio.</p>
+    <button
+      onclick="closeModal()"
+      class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>
+
 <script type="module">
+  function openModal() {
+    document.getElementById('accessModal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('accessModal').classList.add('hidden');
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('accessModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+
+  // Make functions globally available
+  window.openModal = openModal;
+  window.closeModal = closeModal;
+
   document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const { left, top, width, height } = card.getBoundingClientRect();

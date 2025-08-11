@@ -14,6 +14,15 @@ const technologies = [
   "Vue",
   "Angular",
   "Astro",
+  "Claude Sonnet 4",
+  "Chat-GPT",
+  "Gemini 2.5",
+  "ComfyUI",
+  "LLM's",
+  "Python",
+  "Flux",
+  "Veo",
+  "NotebookLM",
 ];
 
 const getTechColor = (tech: string): string => {
@@ -40,6 +49,24 @@ const getTechColor = (tech: string): string => {
       "border-2 border-red-600 text-red-600 roboto-regular hover:bg-red-600 hover:text-white",
     Astro:
       "border-2 border-orange-500 text-orange-500 roboto-regular hover:bg-orange-500 hover:text-white",
+    "Claude Sonnet 4":
+      "border-2 border-purple-600 text-purple-600 roboto-regular hover:bg-purple-600 hover:text-white",
+    "Chat-GPT":
+      "border-2 border-green-600 text-green-600 roboto-regular hover:bg-green-600 hover:text-white",
+    "Gemini 2.5":
+      "border-2 border-blue-500 text-blue-500 roboto-regular hover:bg-blue-500 hover:text-white",
+    ComfyUI:
+      "border-2 border-pink-600 text-pink-600 roboto-regular hover:bg-pink-600 hover:text-white",
+    "LLM's":
+      "border-2 border-violet-600 text-violet-600 roboto-regular hover:bg-violet-600 hover:text-white",
+    Python:
+      "border-2 border-yellow-600 text-yellow-600 roboto-regular hover:bg-yellow-600 hover:text-white",
+    Flux:
+      "border-2 border-teal-600 text-teal-600 roboto-regular hover:bg-teal-600 hover:text-white",
+    Veo:
+      "border-2 border-red-500 text-red-500 roboto-regular hover:bg-red-500 hover:text-white",
+    NotebookLM:
+      "border-2 border-orange-600 text-orange-600 roboto-regular hover:bg-orange-600 hover:text-white",
   };
   return (
     colors[tech] ||
@@ -49,17 +76,76 @@ const getTechColor = (tech: string): string => {
 ---
 
 <section id="experience" class="md:w-3/4 m-auto my-20 p-8">
+  <!-- Primera fila: Tarjeta de IA centrada -->
+  <div class="flex justify-center mb-10">
+    <div class="border border-zinc-600 p-10 rounded-2xl max-w-2xl w-full">
+      <h3 class="text-lg text-indigo-800">Cerdá Group</h3>
+      <h2 class="text-3xl text-black">Responsable de Innovación en Inteligencia Artificial</h2>
+      <h5 class="text-sm roboto-regular-italic">Enero 2025 - Hoy</h5>
+      <p class="my-4 text-base text-zinc-500">
+        Experiencia laboral. Dentro del equipo de Digital Business, desarrollo la incorporación de Inteligencia Artificial en proyectos de desarrollo web, marketing y generación de contenidos. He implementado soluciones basadas en IA para automatizar procesos internos, optimizar flujos de trabajo y potenciar la creatividad en campañas digitales. Entre los avances más destacados se incluyen sistemas de generación de imágenes y vídeos, asistentes inteligentes para uso interno y el desarrollo de herramientas personalizadas que combinan IA con las plataformas de la empresa.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class={`${getTechColor("Claude Sonnet 4")} px-2 py-1 text-xs cursor-default`}>
+          Claude Sonnet 4
+        </span>
+
+        <span
+          class={`${getTechColor("Chat-GPT")} px-2 py-1 text-xs cursor-default`}
+        >
+          Chat-GPT
+        </span>
+
+        <span
+          class={`${getTechColor("Gemini 2.5")} px-2 py-1 text-xs cursor-default`}
+        >
+          Gemini 2.5
+        </span>
+
+        <span
+          class={`${getTechColor("ComfyUI")} px-2 py-1 text-xs cursor-default`}
+        >
+          ComfyUI
+        </span>
+
+        <span
+          class={`${getTechColor("Python")} px-2 py-1 text-xs cursor-default`}
+        >
+          Python
+        </span>
+
+        <span
+          class={`${getTechColor("Flux")} px-2 py-1 text-xs cursor-default`}
+        >
+          Flux
+        </span>
+
+        <span
+          class={`${getTechColor("Veo")} px-2 py-1 text-xs cursor-default`}
+        >
+          Veo
+        </span>
+
+        <span
+          class={`${getTechColor("NotebookLM")} px-2 py-1 text-xs cursor-default`}
+        >
+          NotebookLM
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segunda fila: Otras dos tarjetas -->
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-10 text-base text-zinc-500 mt-8"
+    class="grid grid-cols-1 md:grid-cols-2 gap-10 text-base text-zinc-500"
   >
+
     <div class="border border-zinc-600 p-10 rounded-2xl">
       <h3 class="text-lg text-indigo-800">Cerdá Group</h3>
       <h2 class="text-3xl text-black">Frontend & Ux/Ui Designer</h2>
-      <h5 class="text-sm roboto-regular-italic">Enero 2024 - Hoy</h5>
+      <h5 class="text-sm roboto-regular-italic">Enero 2024 - Diciembre 2024</h5>
       <p class="my-4">
-        Experiencia laboral. Durante este primer año como desarrollador formo
-        parte del equipo de Digital Business y he trabajado mayormente en el
-        desarrollo y mejora de la intranet.
+        Experiencia laboral. Durante un año y medio he trabajado como desarrollador frontend formando parte del equipo de Digital Business y desarrollando parte de la intranet de la empresa.
       </p>
       <div class="flex flex-wrap gap-2 mb-3">
         <span class={`${getTechColor("PHP")} px-2 py-1 text-xs cursor-default`}>
